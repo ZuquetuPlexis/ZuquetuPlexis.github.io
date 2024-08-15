@@ -92,7 +92,7 @@ let chartData = {
 	}]
 };
 
-const busQualChart_ = new Chart('bus_stop_qual', {
+const busQualChart = new Chart('bus_stop_qual', {
   type: 'radar',
   data: chartData,
   options: {
@@ -116,7 +116,7 @@ const busQualChart_ = new Chart('bus_stop_qual', {
 	}
 });
 
-const busQualChart = new Chart('bus_stop_qual', {
+const busQualChart_ = new Chart('bus_stop_qual', {
   type: 'bar',
   data: chartData,
   options: {
