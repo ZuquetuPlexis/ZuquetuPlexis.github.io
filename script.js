@@ -56,7 +56,10 @@ Object.keys(websites).forEach((item, index, arr) => {
         console.log(item.name);
         console.log(item.url);
         div_website_overview.innerHTML += `<a href="${item.url}" class="list-group-item list-group-item-action">${item.name}</a>`;
+      } else {
+        console.log("skip:" + item.name);
       }
+
     });
   }
 });
