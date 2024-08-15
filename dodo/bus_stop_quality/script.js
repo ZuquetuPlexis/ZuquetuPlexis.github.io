@@ -28,13 +28,6 @@ var layerBusStopShelter = L.layerGroup([]);
 var layerBusStopTactile = L.layerGroup([]);
 var layerBusStopNothing = L.layerGroup([]);
 
-/*
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		maxZoom: 19,
-		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-*/
-
 var map = L.map('map', {
 	center: [52.53028, 13.79417],
 	zoom: 13,
@@ -99,7 +92,7 @@ let chartData = {
 	}]
 };
 
-const busQualChart = new Chart('bus_stop_qual', {
+const busQualChart_ = new Chart('bus_stop_qual', {
   type: 'radar',
   data: chartData,
   options: {
@@ -121,6 +114,23 @@ const busQualChart = new Chart('bus_stop_qual', {
 			}
 		}
 	}
+});
+
+const busQualChart = new Chart('bus_stop_qual', {
+  type: 'bar',
+  data: chartData,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Bus Bar Chart'
+      }
+    }
+  },
 });
 
 // ----- ----- -----
