@@ -4,15 +4,18 @@ var websites = {
     "sites": [
       {
         "name": "Qualität der Bushaltestellen",
-        "url": "dodo/bus_stop_quality/dodo_bus_stop_quality.html"
+        "url": "dodo/bus_stop_quality/dodo_bus_stop_quality.html",
+        "show": true
       },
       {
         "name": "Sattelfest 2023",
-        "url": "dodo/sattelfest/sattelfest_2023.html"
+        "url": "dodo/sattelfest/sattelfest_2023.html",
+        "show": false
       },
       {
         "name": "Sattelfest 2024",
-        "url": "dodo/sattelfest/sattelfest_2024.html"
+        "url": "dodo/sattelfest/sattelfest_2024.html",
+        "show": false
       }
     ]
   },
@@ -20,7 +23,8 @@ var websites = {
     "sites": [
       {
         "name": "Freifunk",
-        "url": "freifunk/freifunk.html"
+        "url": "freifunk/freifunk.html",
+        "show": false
       }
     ]
   },
@@ -34,7 +38,8 @@ var websites = {
     "sites": [
       {
         "name": "Maerker Brandenburg Viewer",
-        "url": "maerker/maerker.html"
+        "url": "maerker/maerker.html",
+        "show": false
       }
     ]
   }
@@ -47,9 +52,11 @@ Object.keys(websites).forEach((item, index, arr) => {
   
   if (!sites.lenght) {
     sites.forEach((item, index, arr) => {
-      console.log(item.name);
-      console.log(item.url);
-      div_website_overview.innerHTML += `<a href="${item.url}" class="list-group-item list-group-item-action">${item.name}</a>`;
+      if(item.show) {
+        console.log(item.name);
+        console.log(item.url);
+        div_website_overview.innerHTML += `<a href="${item.url}" class="list-group-item list-group-item-action">${item.name}</a>`;
+      }
     });
   }
 });
